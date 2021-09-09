@@ -3,19 +3,58 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Library</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='reset.css'>
-    <script src='script.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js' defer></script>
 </head>
 <body>
-    
+
     <div id="main">
+        
+        <form id="addForm">
+            <span id="closeAddForm">X</span>
+            <div id="titlePrompt">
+                <label for="titleInput">Title</label>
+                <input type="text" id="titleInput" name="title" class="textInput">
+            </div>
+            <div id="authorPrompt">
+                <label for="authorInput">Author</label>
+                <input type="text" id="authorInput" name="author" class="textInput">
+            </div>
+            <div id="pagesPrompt">
+                <label for="pagesInput">Number of pages</label>
+                <input type="number" id="pagesInput" name="pages">
+            </div>
+            <!-- <div id="commentsPrompt">
+                <label for="commentsInput">Additional comments</label>
+                <textarea id="commentsPrompt" name="comments"></textarea>
+            </div> -->
+            <div id="readPrompt">
+                <label for="readInput">Read?</label>
+                <label for="yes"> Yes</label>
+                <input type="radio" id="yes" name="read" value="true">
+                <label for="no"> No</label>
+                <input type="radio" id="no" name="read" value="false">
+            </div>
+            <button type="submit" id="submitAdd">Add to library</button>
+        </form>
+
+        <div id="deletePrompt">
+            <p>Delete?</p>   
+            <div id="options">
+                <button type="button" class="deletePrompt" value="yes">Yes</button>
+                <button type="button" class="deletePrompt" value="no">No</button>
+            </div>
+        </div>
+
+        <div id="bookInfo"></div>
         <div id="bookshelf"></div>
         <div id="controls">
-            <button type="button" id="addBook" value="addBook">Add new book</button>
-            <button type="button" id="removeBook" value="removeBook">Remove selected</button>
+            <button type="button" id="addBook" class="ctrlBtn">Add new book</button>
+            <button type="button" id="bookInfo" class="ctrlBtn">Show book info</button>
+            <button type="button" id="removeBook" class="ctrlBtn">Remove selected</button>
         </div>
     </div>
 

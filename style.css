@@ -1,0 +1,150 @@
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("back1.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: monospace;
+}
+
+#bookshelf {
+    align-self: center;
+    width: 1000px;
+    height: 400px;
+    border-radius: 10px;
+    display: grid;
+    user-select: none;
+    column-gap: 2%;
+    border: 6px solid rgb(172, 170, 170);
+    align-items: flex-start;
+    justify-content: space-evenly;
+    box-shadow: 2px 2px 25px 25px black;
+    flex-wrap: wrap;
+    padding-top: 1.5em;
+    grid-template-columns: repeat(auto-fill, 170px);
+    grid-template-rows: repeat(2, 100px);
+    background-color: rgba(190, 125, 81, 0.329)
+
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 10em;
+    justify-content: center;
+}
+
+.ctrlBtn {
+    border: 3.5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 0.8em;
+    color: black;
+    font-size: 1.2em;
+    background-color: rgb(173, 88, 55);
+    transition: all 0.05s;
+    cursor: pointer;
+}
+
+
+#addForm {
+    visibility: hidden;
+    height: 400px;
+    width: 800px;
+    background-color: rgb(230, 161, 134);
+    align-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8em;
+    color: rgb(122, 45, 45);
+    border: 10px solid black;
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+#deletePrompt {
+    visibility: hidden;
+    height: 200px;
+    width: 400px;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.7em;
+    font-weight: bold;
+    background-color: rgb(194, 168, 117);
+    font-size: 1.65em;
+    border: 10px solid black;
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+#deletePrompt button {
+    border: 2px solid black;
+    padding: 0.6em 2em 0.6em 2em;
+    border-radius: 3.5px;
+    background-color: rgb(248, 215, 105);
+    cursor: pointer;
+}
+
+
+input[type=text] {
+    width: 300px;
+    border: none;
+    border-radius: 2px;
+}
+
+input[type=number] {
+    width: 70px;
+}
+
+#addForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+#submitAdd {
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 3.5px;
+    background-color: rgb(248, 215, 105);
+    cursor: pointer;
+}
+
+#closeAddForm {
+    font-size: 1.3em;
+    align-self: flex-end;
+    margin-right: 1.05%;
+    cursor: pointer;
+}
+
+.bookDiv {
+    background-image: url('bookspine.png');
+    background-size: cover;
+    border-radius: 4px;
+    width: 170px;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px 5px black;
+}
+
+.selectedBookDiv {
+    box-shadow: 2px 2px 5px 5px white;
+}
+
+.bookText {
+    color: rgb(226, 218, 198);   
+    text-shadow: 6px 6px 4px rgb(0, 0, 0);
+    margin: 3%;
+    line-height: 1.2em;
+    text-align: center;
+    font-size: 1.2em;
+}
