@@ -1,7 +1,7 @@
 #main {
     width: 100vw;
     height: 100vh;
-    background-image: url("back1.jpg");
+    background-image: url("backgrounds/back1.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -53,17 +53,18 @@
     visibility: hidden;
     height: 400px;
     width: 800px;
-    background-color: rgb(230, 161, 134);
     align-self: center;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.8em;
-    color: rgb(122, 45, 45);
-    border: 10px solid black;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
     border-radius: 6px;
-    opacity: 0.9;
+    row-gap: 1.5em;
+    background-image: url("backgrounds/menuBack.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 #deletePrompt {
@@ -99,16 +100,11 @@ input[type=text] {
     width: 300px;
     border: none;
     border-radius: 2px;
+    background-color:rgb(255, 255, 255);
 }
 
 input[type=number] {
     width: 70px;
-}
-
-#addForm {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2em;
 }
 
 #submitAdd {
@@ -122,12 +118,12 @@ input[type=number] {
 #closeAddForm {
     font-size: 1.3em;
     align-self: flex-end;
-    margin-right: 1.05%;
+    margin: 1.05% 1.1%;
     cursor: pointer;
 }
 
 .bookDiv {
-    background-image: url('bookspine.png');
+    background-image: url('backgrounds/bookspine.png');
     background-size: cover;
     border-radius: 4px;
     width: 170px;
@@ -141,10 +137,30 @@ input[type=number] {
 }
 
 .bookText {
-    color: rgb(226, 218, 198);   
-    text-shadow: 6px 6px 4px rgb(0, 0, 0);
+    color: rgb(238, 224, 198);   
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);
     margin: 3%;
     line-height: 1.2em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
+}
+
+#bookInfoDisplay {
+    visibility: hidden;
+    height: 200px;
+    width: 400px;
+    align-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    text-align: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    border-radius: 6px;
+    row-gap: 1.5em;
+    background-image: url("backgrounds/menuBack.jpg");
+    background-size: cover;
+    background-position: center;
 }

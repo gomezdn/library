@@ -3,18 +3,16 @@ const harry2 = new Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling
 const harry3 = new Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", 317, false);
 const harry4 = new Book("Harry Potter and the Goblet of Fire", "J.K. Rowling", 636, false);
 const harry5 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", 766, false);
-const harry6 = new Book("Harry Potter and the Half-Blood Prince", "J.K Rowling", 607, false);
+const harry6 = new Book("Harry Potter and the Half-Blood Prince", "J.K Rowling", 607, true);
 const harry7 = new Book("Harry Potter and the Deathly Hallows", "J.K Rowling", 607, false);
 
-let myLibrary = [harry1, harry2, harry3, harry4, harry5,harry1, harry2, harry3, harry4, harry5,
-    harry1, harry2, harry3, harry4, harry1, harry2, harry3, harry4, harry5]
+let myLibrary = [harry1, harry2, harry3, harry4, harry5, harry6, harry7]
 
-function Book(title, author, pages, read, comments) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read
-    this.comments = comments
     this.info = function() {
         let isItRead = this.read ? "already read." : "not read yet.";
         return `${this.title} by ${this.author}, ${this.pages} pages, ${isItRead}`
@@ -33,7 +31,10 @@ const removeSelected = document.querySelector("#removeBook");
 const closeAddForm = document.querySelector("#closeAddForm");
 const deletePromptOptions = document.querySelectorAll(".deletePrompt")
 const deletePrompt = document.querySelector("#deletePrompt")
-
+const bookInfoDisplay = document.querySelector("#bookInfoDisplay")
+const bookInfoText = document.querySelector("#bookInfoText")
+const bookInfoButton = document.querySelector("#bookInfo")
+const readInfoCheckbox = document.querySelector("#readInfo")
 let lastBookSelected;
 
 addBookMenuButton.addEventListener("click", () => {
@@ -43,6 +44,7 @@ addBookMenuButton.addEventListener("click", () => {
     }
     addBookForm.style.visibility = "visible"
     deletePrompt.style.visibility = "hidden"
+    bookInfoDisplay.style.visibility = "hidden"
     if(lastBookSelected) {
         lastBookSelected.classList.remove("selectedBookDiv")
         lastBookSelected = null;
@@ -75,7 +77,10 @@ function hideAndResetForm() {
 
 
 removeSelected.addEventListener("click", () => {
-    if(lastBookSelected) {deletePrompt.style.visibility = "visible"};
+    if(lastBookSelected) {
+        deletePrompt.style.visibility = "visible";
+        bookInfoDisplay.style.visibility = "hidden";
+    }
 })
 
 deletePromptOptions.forEach(button => button.addEventListener("click", (e) => {
@@ -88,6 +93,19 @@ deletePromptOptions.forEach(button => button.addEventListener("click", (e) => {
     deletePrompt.style.visibility = "hidden";
 }))
 
+bookInfoButton.addEventListener("click", () => {
+    if (lastBookSelected) {
+        bookInfoDisplay.style.visibility = bookInfoDisplay.style.visibility == "visible" ? "hidden" : "visible";
+        deletePrompt.style.visibility = "hidden";
+        addBookForm.style.visibility = "hidden";
+        bookInfoText.innerText = myLibrary[lastBookSelected.getAttribute("index")].info();
+    }
+})
+
+readInfoCheckbox.addEventListener("change", (e) => {
+    myLibrary[lastBookSelected.getAttribute("index")].read = readInfoCheckbox.checked;
+    bookInfoText.innerText = myLibrary[lastBookSelected.getAttribute("index")].info();
+})
 
 function removeBook(bookToDelete) {
     myLibrary = myLibrary.filter((book, index) => index != bookToDelete.getAttribute("index"))
@@ -110,9 +128,19 @@ function displayLibraryOnBookshelf() {
 function makeBooksSelectable() {
     bookshelf.querySelectorAll("div").forEach(book => book.addEventListener("click", () => {
         book.classList.toggle("selectedBookDiv");
-        if (lastBookSelected    ) {lastBookSelected.classList.remove("selectedBookDiv")};
+        if (lastBookSelected) {
+            lastBookSelected.classList.remove("selectedBookDiv")
+        };
+        displayBookInfo(book)
         lastBookSelected = book;
+        readInfoCheckbox.checked = myLibrary[book.getAttribute("index")].read;
     }))
+}
+
+function displayBookInfo(book) {
+    if (bookInfoDisplay.style.visibility == "visible") {
+        bookInfoText.innerText = myLibrary[book.getAttribute("index")].info()
+    }
 }
 
 function cleanBookshelf() {
@@ -131,6 +159,7 @@ function setIndexAttributeToBookDivs() {
 function updateBookshelf() {
     cleanBookshelf()
     displayLibraryOnBookshelf()
+    setIndexAttributeToBookDivs()
     makeBooksSelectable()
 }
 

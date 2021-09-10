@@ -27,10 +27,6 @@
                 <label for="pagesInput">Number of pages</label>
                 <input type="number" id="pagesInput" name="pages">
             </div>
-            <!-- <div id="commentsPrompt">
-                <label for="commentsInput">Additional comments</label>
-                <textarea id="commentsPrompt" name="comments"></textarea>
-            </div> -->
             <div id="readPrompt">
                 <label for="readInput">Read?</label>
                 <label for="yes"> Yes</label>
@@ -49,7 +45,13 @@
             </div>
         </div>
 
-        <div id="bookInfo"></div>
+        <div id="bookInfoDisplay">
+            <p id="bookInfoText"></p>
+            <p id="toggleRead">
+                <label for="readInfo">Read</label>
+                <input id="readInfo" type="checkbox">
+            </p>
+        </div>
         <div id="bookshelf"></div>
         <div id="controls">
             <button type="button" id="addBook" class="ctrlBtn">Add new book</button>
