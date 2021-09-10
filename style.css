@@ -11,8 +11,8 @@
 
 #bookshelf {
     align-self: center;
-    width: 1000px;
-    height: 400px;
+    width: 75vw;
+    height: 30vw;
     border-radius: 10px;
     display: grid;
     user-select: none;
@@ -21,19 +21,17 @@
     align-items: flex-start;
     justify-content: space-evenly;
     box-shadow: 2px 2px 25px 25px black;
-    flex-wrap: wrap;
     padding-top: 1.5em;
-    grid-template-columns: repeat(auto-fill, 170px);
-    grid-template-rows: repeat(2, 100px);
-    background-color: rgba(190, 125, 81, 0.329)
-
+    grid-template-columns: repeat(auto-fill, 12vw);
+    grid-template-rows: repeat(4, 8vw);
+    background-color: rgba(190, 125, 81, 0.329);
 }
 
 #controls {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    column-gap: 10em;
+    flex-wrap: wrap;
+    column-gap: 2vw;
     justify-content: center;
 }
 
@@ -42,7 +40,7 @@
     border-radius: 5px;
     padding: 0.8em;
     color: black;
-    font-size: 1.2em;
+    font-size: 2.9vh;
     background-color: rgb(173, 88, 55);
     transition: all 0.05s;
     cursor: pointer;
@@ -51,14 +49,14 @@
 
 #addForm {
     visibility: hidden;
-    height: 400px;
-    width: 800px;
+    height: 70vh;
+    width: 60vw;
     align-self: center;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2em;
+    font-size: 4vh;
     color: rgb(0, 0, 0);
     border-radius: 6px;
     row-gap: 1.5em;
@@ -69,8 +67,8 @@
 
 #deletePrompt {
     visibility: hidden;
-    height: 200px;
-    width: 400px;
+    height: 15vw;
+    width: 30vw;
     align-self: center;
     justify-self: center;
     position: absolute;
@@ -81,7 +79,7 @@
     row-gap: 1.7em;
     font-weight: bold;
     background-color: rgb(194, 168, 117);
-    font-size: 1.65em;
+    font-size: 1.8vw;
     border: 10px solid black;
     border-radius: 6px;
     opacity: 0.9;
@@ -89,34 +87,34 @@
 
 #deletePrompt button {
     border: 2px solid black;
-    padding: 0.6em 2em 0.6em 2em;
-    border-radius: 3.5px;
+    padding: 0.6vw 2vw 0.6vw 2vw;
+    border-radius: 4px;
     background-color: rgb(248, 215, 105);
     cursor: pointer;
 }
 
 
 input[type=text] {
-    width: 300px;
+    width: 20vw;
     border: none;
     border-radius: 2px;
     background-color:rgb(255, 255, 255);
 }
 
 input[type=number] {
-    width: 70px;
+    width: 5vw;
 }
 
 #submitAdd {
     border: 2px solid black;
-    padding: 0.5em;
+    padding: 0.8vw;
     border-radius: 3.5px;
     background-color: rgb(248, 215, 105);
     cursor: pointer;
 }
 
 #closeAddForm {
-    font-size: 1.3em;
+    font-size: 4.8vh;
     align-self: flex-end;
     margin: 1.05% 1.1%;
     cursor: pointer;
@@ -126,10 +124,11 @@ input[type=number] {
     background-image: url('backgrounds/bookspine.png');
     background-size: cover;
     border-radius: 4px;
-    width: 170px;
-    height: 70px;
+    width: 12vw;
+    height: 5vw;
     cursor: pointer;
     box-shadow: 10px 10px 15px 5px black;
+
 }
 
 .selectedBookDiv {
@@ -140,26 +139,25 @@ input[type=number] {
     color: rgb(238, 224, 198);   
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
     margin: 3%;
-    line-height: 1.2em;
     text-align: center;
-    font-size: 1em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
+    font-size: 1.2vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif   ;
 }
 
 #bookInfoDisplay {
     visibility: hidden;
-    height: 200px;
-    width: 400px;
+    height: 42%;
+    width: 42%;
     align-self: center;
     position: absolute;
     display: flex;
     flex-direction: column;
-    font-size: 2em;
+    font-size: 1.9vw;
     text-align: center;
     justify-content: center;
     color: rgb(0, 0, 0);
     border-radius: 6px;
-    row-gap: 1.5em;
+    row-gap: 2vw;
     background-image: url("backgrounds/menuBack.jpg");
     background-size: cover;
     background-position: center;
