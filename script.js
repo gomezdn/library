@@ -6,8 +6,7 @@ const harry5 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowli
 const harry6 = new Book("Harry Potter and the Half-Blood Prince", "J.K Rowling", 607, true);
 const harry7 = new Book("Harry Potter and the Deathly Hallows", "J.K Rowling", 607, false);
 
-let myLibrary = [harry1, harry2, harry3, harry4, harry5, harry6, harry7, harry4, harry5, harry6, harry7,
-    harry4, harry5, harry6, harry7, harry4, harry5, harry6, harry7]
+let myLibrary = [harry1, harry2, harry3, harry4, harry5, harry6, harry7]
 
 function Book(title, author, pages, read) {
     this.title = title;
