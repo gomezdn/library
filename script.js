@@ -3,7 +3,7 @@ const harry2 = new Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling
 const harry3 = new Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", 317, false);
 const harry4 = new Book("Harry Potter and the Goblet of Fire", "J.K. Rowling", 636, false);
 const harry5 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", 766, false);
-const harry6 = new Book("Harry Potter and the Half-Blood Prince", "J.K Rowling", 607, true);
+const harry6 = new Book("Harry Potter and the Half-Blood Prince", "J.K Rowling", 607, false);
 const harry7 = new Book("Harry Potter and the Deathly Hallows", "J.K Rowling", 607, false);
 
 let myLibrary = [harry1, harry2, harry3, harry4, harry5, harry6, harry7]
@@ -35,6 +35,7 @@ const bookInfoDisplay = document.querySelector("#bookInfoDisplay")
 const bookInfoText = document.querySelector("#bookInfoText")
 const bookInfoButton = document.querySelector("#bookInfo")
 const readInfoCheckbox = document.querySelector("#readInfo")
+const closeInfoDisplay = document.querySelector("#closeInfo")
 let lastBookSelected;
 
 addBookMenuButton.addEventListener("click", () => {
@@ -80,6 +81,8 @@ removeSelected.addEventListener("click", () => {
     if(lastBookSelected) {
         deletePrompt.style.visibility = "visible";
         bookInfoDisplay.style.visibility = "hidden";
+        addBookForm.style.visibility = "hidden"
+        addBookForm.reset()
     }
 })
 
@@ -100,6 +103,10 @@ bookInfoButton.addEventListener("click", () => {
         addBookForm.style.visibility = "hidden";
         bookInfoText.innerText = myLibrary[lastBookSelected.getAttribute("index")].info();
     }
+})
+
+closeInfoDisplay.addEventListener("click", () => {
+    bookInfoDisplay.style.visibility = "hidden";
 })
 
 readInfoCheckbox.addEventListener("change", (e) => {

@@ -1,6 +1,11 @@
-#main {
+body {
     width: 100vw;
     height: 100vh;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
     background-image: url("backgrounds/back1.jpg");
     background-size: cover;
     display: flex;
@@ -11,8 +16,8 @@
 
 #bookshelf {
     align-self: center;
-    width: 75vw;
-    height: 30vw;
+    width: 72%;
+    height: 70%;
     border-radius: 10px;
     display: grid;
     user-select: none;
@@ -21,11 +26,65 @@
     align-items: flex-start;
     justify-content: space-evenly;
     box-shadow: 2px 2px 25px 25px black;
-    padding-top: 1.5em;
+    padding-top: 1%;
     grid-template-columns: repeat(auto-fill, 12vw);
     grid-template-rows: repeat(4, 8vw);
     background-color: rgba(190, 125, 81, 0.329);
 }
+
+#addForm {
+    visibility: hidden;
+    height: 70%;
+    width: 60%;
+    align-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 4vh;
+    color: rgb(0, 0, 0);
+    border-radius: 6px;
+    row-gap: 10%;
+    background-image: url("backgrounds/menuBack.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#deletePrompt {
+    visibility: hidden;
+    height: 30%;
+    width: 25%;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.7em;
+    font-weight: bold;
+    background-color: rgb(194, 168, 117);
+    font-size: 3.3vh;
+    border: 10px solid black;
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+#closeInfo {
+    font-weight: bold;
+    align-self: flex-end;
+    margin: 1.5% 2% 0 0;
+    cursor: pointer;
+}
+
+#deletePrompt button {
+    border: 2px solid black;
+    padding: 0.6vw 2vw 0.6vw 2vw;
+    border-radius: 4px;
+    background-color: rgb(248, 215, 105);
+    cursor: pointer;
+}
+
 
 #controls {
     display: flex;
@@ -45,54 +104,6 @@
     transition: all 0.05s;
     cursor: pointer;
 }
-
-
-#addForm {
-    visibility: hidden;
-    height: 70vh;
-    width: 60vw;
-    align-self: center;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 4vh;
-    color: rgb(0, 0, 0);
-    border-radius: 6px;
-    row-gap: 1.5em;
-    background-image: url("backgrounds/menuBack.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-#deletePrompt {
-    visibility: hidden;
-    height: 15vw;
-    width: 30vw;
-    align-self: center;
-    justify-self: center;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 1.7em;
-    font-weight: bold;
-    background-color: rgb(194, 168, 117);
-    font-size: 1.8vw;
-    border: 10px solid black;
-    border-radius: 6px;
-    opacity: 0.9;
-}
-
-#deletePrompt button {
-    border: 2px solid black;
-    padding: 0.6vw 2vw 0.6vw 2vw;
-    border-radius: 4px;
-    background-color: rgb(248, 215, 105);
-    cursor: pointer;
-}
-
 
 input[type=text] {
     width: 20vw;
@@ -114,9 +125,9 @@ input[type=number] {
 }
 
 #closeAddForm {
-    font-size: 4.8vh;
+    font-weight: bold;
     align-self: flex-end;
-    margin: 1.05% 1.1%;
+    margin: 1.5% 2% 0 0;
     cursor: pointer;
 }
 
@@ -124,8 +135,8 @@ input[type=number] {
     background-image: url('backgrounds/bookspine.png');
     background-size: cover;
     border-radius: 4px;
-    width: 12vw;
-    height: 5vw;
+    width: 100%;
+    height: 57%;
     cursor: pointer;
     box-shadow: 10px 10px 15px 5px black;
 
@@ -154,7 +165,7 @@ input[type=number] {
     flex-direction: column;
     font-size: 1.9vw;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: rgb(0, 0, 0);
     border-radius: 6px;
     row-gap: 2vw;
