@@ -173,3 +173,10 @@ input[type=number] {
     background-size: cover;
     background-position: center;
 }
+
+
+@media (max-width: 500px) {
+    #bookshelf {
+        grid-template-columns: repeat(2, 12vw);
+    }
+}

@@ -171,5 +171,4 @@ function updateBookshelf() {
 }
 
 updateBookshelf()
-
-
+setIndexAttributeToBookDivs()
